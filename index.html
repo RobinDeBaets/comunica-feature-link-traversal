@@ -1,0 +1,780 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Comunica Link Traversal</title>
+	<meta name="description" content="Documentation for Comunica Link Traversal">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">Comunica Link Traversal</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>Comunica Link Traversal</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<p align="center">
+					<a href="https://comunica.dev/">
+						<img alt="Comunica" src="https://comunica.dev/img/comunica_red.svg" width="200">
+					</a>
+				</p>
+				<p align="center">
+					<strong>Link Traversal for Comunica</strong>
+				</p>
+				<p align="center">
+					<a href="https://github.com/comunica/comunica-feature-link-traversal/actions?query=workflow%3ACI"><img src="https://github.com/comunica/comunica-feature-link-traversal/workflows/CI/badge.svg" alt="Build Status"></a>
+					<a href="https://coveralls.io/github/comunica/comunica-feature-link-traversal?branch=master"><img src="https://coveralls.io/repos/github/comunica/comunica-feature-link-traversal/badge.svg?branch=master" alt="Coverage Status"></a>
+					<a href="https://gitter.im/comunica/Lobby"><img src="https://badges.gitter.im/comunica.png" alt="Gitter chat"></a>
+				</p>
+				<p><strong><a href="https://comunica.dev/">Learn more about Comunica on our website</a>.</strong></p>
+				<p>This is a monorepo that contains packages for allowing <a href="https://github.com/comunica/comunica">Comunica</a> to link traversal-based query execution.
+				If you want to <em>use</em> an Link Traversal-enabled Comunica engine, have a look at <a href="https://github.com/comunica/comunica-feature-link-traversal/tree/master/engines/query-sparql-link-traversal">Comunica SPARQL Link Traversal</a>.</p>
+				<p>Concretely, link traversal is enabled in the following engines:</p>
+				<ul>
+					<li>Query engine configurations:<ul>
+							<li><a href="https://github.com/comunica/comunica-feature-link-traversal/tree/master/engines/query-sparql-link-traversal">Comunica SPARQL Link Traversal</a>: A Comunica query engine that includes all Link Traversal packages.</li>
+							<li><a href="https://github.com/comunica/comunica-feature-link-traversal/tree/master/engines/query-sparql-link-traversal-solid">Comunica SPARQL Link Traversal Solid</a>: A Comunica query engine that includes all Link Traversal and Solid-related packages.</li>
+						</ul>
+					</li>
+				</ul>
+				<p>These engines make use of the following packages:</p>
+				<ul>
+					<li>Seed URL actors:<ul>
+							<li><a href="https://github.com/comunica/comunica-feature-link-traversal/tree/master/packages/actor-optimize-query-operation-set-seed-sources-quadpattern-iris">Seed URL preprocessor</a>: Actor that sets sources based on the given query, if no other sources were set.</li>
+						</ul>
+					</li>
+					<li>Join entries sort actors:<ul>
+							<li><a href="https://github.com/comunica/comunica-feature-link-traversal/tree/master/packages/actor-rdf-join-entries-sort-traversal-zero-knowledge">Zero-knowledge</a>: Actor that orders join entries based on heuristics for plan selection in link traversal environments.</li>
+						</ul>
+					</li>
+					<li>Link extractors (all require <a href="https://github.com/comunica/comunica-feature-link-traversal/tree/master/packages/actor-rdf-resolve-hypermedia-links-traverse">Traverse RDF Resolve Hypermedia Links Actor</a> and <a href="https://github.com/comunica/comunica-feature-link-traversal/tree/master/packages/actor-rdf-metadata-extract-traverse">Traverse RDF Metadata Extract Actor</a>):<ul>
+							<li><a href="https://github.com/comunica/comunica-feature-link-traversal/tree/master/packages/actor-extract-links-all">All links extractor</a>: Actor that extracts all URLs in a document for traversal.</li>
+							<li><a href="https://github.com/comunica/comunica-feature-link-traversal/tree/master/packages/actor-extract-links-content-policies">Content policies extractor</a>: Actor that extracts URLs matching content policies in a document for traversal.<ul>
+									<li><em>Requires <a href="https://github.com/comunica/comunica-feature-link-traversal/tree/master/packages/actor-rdf-resolve-hypermedia-links-traverse-replace-conditional">Traverse Filter Conditional RDF Resolve Hypermedia Links Actor</a></em></li>
+								</ul>
+							</li>
+							<li><a href="https://github.com/comunica/comunica-feature-link-traversal/tree/master/packages/actor-extract-links-predicates">Predicates extractor</a>: Actor that extracts the object URLs of triples that match with a configured predicate regex for traversal.</li>
+							<li><a href="https://github.com/comunica/comunica-feature-link-traversal/tree/master/packages/actor-extract-links-quad-pattern">Quad pattern extractor</a>: Actor that extracts all URLs that match the current quad pattern in a document for traversal.</li>
+							<li><a href="https://github.com/comunica/comunica-feature-link-traversal/tree/master/packages/actor-extract-links-quad-pattern-query">Quad pattern query extractor</a>: Actor that extracts all URLs that match any quad pattern in the current query in a document for traversal.</li>
+							<li><a href="https://github.com/comunica/comunica-feature-link-traversal/tree/master/packages/actor-extract-links-solid-type-index">Solid type index extractor</a>: Actor that extracts links to types via the <a href="https://github.com/solid/solid/blob/main/proposals/data-discovery.md">Solid type index</a>.</li>
+						</ul>
+					</li>
+					<li>Pruning actors:<ul>
+							<li><a href="https://github.com/comunica/comunica-feature-link-traversal/tree/master/packages/actor-rdf-resolve-hypermedia-links-traverse-prune-shapetrees">Traverse Prune ShapeTrees RDF Resolve Hypermedia Links Actor</a>: Actor that prunes links that are guaranteed to not match with the current query based on <a href="https://shapetrees.org/">ShapeTrees</a> metadata.<ul>
+									<li><em>Requires <a href="https://github.com/comunica/comunica-feature-link-traversal/tree/master/packages/actor-rdf-metadata-extract-shapetrees">ShapeTrees RDF Metadata Extract Actor</a></em></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>Query termination actors:<ul>
+							<li><a href="https://github.com/comunica/comunica-feature-link-traversal/tree/master/packages/actor-rdf-resolve-hypermedia-links-queue-wrapper-limit-count">Link count limit</a>: Actor that imposes a limit of the maximum number of links that can be pushed into the link queue.</li>
+							<li><a href="https://github.com/comunica/comunica-feature-link-traversal/tree/master/packages/actor-rdf-resolve-hypermedia-links-queue-wrapper-limit-depth">Link depth limit</a>: Actor that imposes a limit of the depth of link paths that can be pushed into the link queue.</li>
+						</ul>
+					</li>
+					<li>Source annotation actors:<ul>
+							<li><a href="https://github.com/comunica/comunica-feature-link-traversal/tree/master/packages/actor-rdf-resolve-hypermedia-links-traverse-annotate-source-graph">Annotate Graph</a>: Annotates triples with their document&#39;s URL via the named graph.</li>
+						</ul>
+					</li>
+					<li>Buses:<ul>
+							<li><a href="https://github.com/comunica/comunica-feature-link-traversal/tree/master/packages/bus-extract-links">Extract links</a>: Bus that determines the links to follow from a metadata quad stream.</li>
+						</ul>
+					</li>
+					<li>Mediators:<ul>
+							<li><a href="https://github.com/comunica/comunica-feature-link-traversal/tree/master/packages/mediator-combine-array">Combine array</a>: Mediator that concatenates an array of all actor results.</li>
+						</ul>
+					</li>
+					<li>Other:<ul>
+							<li><a href="https://github.com/comunica/comunica-feature-link-traversal/tree/master/packages/context-entries-link-traversal">Context entries</a>: Reusable context key definitions for link traversal.</li>
+							<li><a href="https://github.com/comunica/comunica-feature-link-traversal/tree/master/packages/types-link-traversal">Types</a>: Reusable Typescript interfaces and types for link traversal.</li>
+						</ul>
+					</li>
+				</ul>
+				<p><strong>Warning: All packages in this repo should be considered unstable, and breaking changes may occur at any time.</strong></p>
+				<p><a href="https://comunica.dev/research/link_traversal/">Click here to learn more about Link Traversal in Comunica, or to see live examples</a>.</p>
+				<a href="#development-setup" id="development-setup" style="color: inherit; text-decoration: none;">
+					<h2>Development Setup</h2>
+				</a>
+				<p><em>(JSDoc: <a href="https://comunica.github.io/comunica-feature-link-traversal/">https://comunica.github.io/comunica-feature-link-traversal/</a>)</em></p>
+				<p>This repository should be used by Comunica module <strong>developers</strong> as it contains multiple Comunica modules that can be composed.
+					This repository is managed as a <a href="https://github.com/babel/babel/blob/master/doc/design/monorepo.md">monorepo</a>
+				using <a href="https://lernajs.io/">Lerna</a>.</p>
+				<p>If you want to develop new features
+					or use the (potentially unstable) in-development version,
+				you can set up a development environment for Comunica.</p>
+				<p>Comunica requires <a href="http://nodejs.org/">Node.JS</a> 8.0 or higher and the <a href="https://yarnpkg.com/en/">Yarn</a> package manager.
+				Comunica is tested on OSX, Linux and Windows.</p>
+				<p>This project can be setup by cloning and installing it as follows:</p>
+				<pre><code class="language-bash"><span style="color: #000000">$ git clone https://github.com/comunica/comunica.git</span>
+<span style="color: #000000">$ </span><span style="color: #795E26">cd</span><span style="color: #000000"> comunica</span>
+<span style="color: #000000">$ yarn install</span>
+</code></pre>
+				<p><strong>Note: <code>npm install</code> is not supported at the moment, as this project makes use of Yarn&#39;s <a href="https://yarnpkg.com/lang/en/docs/workspaces/">workspaces</a> functionality</strong></p>
+				<p>This will install the dependencies of all modules, and bootstrap the Lerna monorepo.
+					After that, all <a href="https://github.com/comunica/comunica-feature-link-traversal/tree/master/packages">Comunica packages</a> are available in the <code>packages/</code> folder
+				and can be used in a development environment, such as querying with <a href="https://github.com/comunica/comunica-feature-link-traversal/tree/master/engines/query-sparql-link-traversal">Comunica SPARQL Link Traversal (<code>engines/query-sparql-link-traversal</code>)</a>.</p>
+				<p>Furthermore, this will add <a href="https://www.npmjs.com/package/pre-commit">pre-commit hooks</a>
+					to build, lint and test.
+				These hooks can temporarily be disabled at your own risk by adding the <code>-n</code> flag to the commit command.</p>
+				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
+					<h2>License</h2>
+				</a>
+				<p>This code is copyrighted by <a href="http://idlab.ugent.be/">Ghent University – imec</a>
+				and released under the <a href="http://opensource.org/licenses/MIT">MIT license</a>.</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Modules</a>
+					</li>
+					<li class="label tsd-is-external">
+						<span>Internals</span>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/actor_extract_links_all.html">actor-<wbr>extract-<wbr>links-<wbr>all</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/actor_extract_links_content_policies.html">actor-<wbr>extract-<wbr>links-<wbr>content-<wbr>policies</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/actor_extract_links_predicates.html">actor-<wbr>extract-<wbr>links-<wbr>predicates</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/actor_extract_links_quad_pattern.html">actor-<wbr>extract-<wbr>links-<wbr>quad-<wbr>pattern</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/actor_extract_links_quad_pattern_query.html">actor-<wbr>extract-<wbr>links-<wbr>quad-<wbr>pattern-<wbr>query</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/actor_extract_links_solid_type_index.html">actor-<wbr>extract-<wbr>links-<wbr>solid-<wbr>type-<wbr>index</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/actor_optimize_query_operation_set_seed_sources_quadpattern_iris.html">actor-<wbr>optimize-<wbr>query-<wbr>operation-<wbr>set-<wbr>seed-<wbr>sources-<wbr>quadpattern-<wbr>iris</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/actor_rdf_join_entries_sort_traversal_zero_knowledge.html">actor-<wbr>rdf-<wbr>join-<wbr>entries-<wbr>sort-<wbr>traversal-<wbr>zero-<wbr>knowledge</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/actor_rdf_metadata_extract_shapetrees.html">actor-<wbr>rdf-<wbr>metadata-<wbr>extract-<wbr>shapetrees</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/actor_rdf_metadata_extract_traverse.html">actor-<wbr>rdf-<wbr>metadata-<wbr>extract-<wbr>traverse</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/actor_rdf_resolve_hypermedia_links_queue_wrapper_limit_count.html">actor-<wbr>rdf-<wbr>resolve-<wbr>hypermedia-<wbr>links-<wbr>queue-<wbr>wrapper-<wbr>limit-<wbr>count</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/actor_rdf_resolve_hypermedia_links_queue_wrapper_limit_depth.html">actor-<wbr>rdf-<wbr>resolve-<wbr>hypermedia-<wbr>links-<wbr>queue-<wbr>wrapper-<wbr>limit-<wbr>depth</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/actor_rdf_resolve_hypermedia_links_traverse.html">actor-<wbr>rdf-<wbr>resolve-<wbr>hypermedia-<wbr>links-<wbr>traverse</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/actor_rdf_resolve_hypermedia_links_traverse_annotate_source_graph.html">actor-<wbr>rdf-<wbr>resolve-<wbr>hypermedia-<wbr>links-<wbr>traverse-<wbr>annotate-<wbr>source-<wbr>graph</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/actor_rdf_resolve_hypermedia_links_traverse_prune_shapetrees.html">actor-<wbr>rdf-<wbr>resolve-<wbr>hypermedia-<wbr>links-<wbr>traverse-<wbr>prune-<wbr>shapetrees</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/actor_rdf_resolve_hypermedia_links_traverse_replace_conditional.html">actor-<wbr>rdf-<wbr>resolve-<wbr>hypermedia-<wbr>links-<wbr>traverse-<wbr>replace-<wbr>conditional</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/bus_extract_links.html">bus-<wbr>extract-<wbr>links</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/context_entries_link_traversal.html">context-<wbr>entries-<wbr>link-<wbr>traversal</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/engines_query_sparql_link_traversal_solid_lib.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/lib</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/engines_query_sparql_link_traversal_solid_lib_CliArgsHandlerAnnotateSources.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/lib/<wbr>Cli<wbr>Args<wbr>Handler<wbr>Annotate<wbr>Sources</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/engines_query_sparql_link_traversal_solid_lib_QueryEngine.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/lib/<wbr>Query<wbr>Engine</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/engines_query_sparql_link_traversal_solid_lib_QueryEngineFactory.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/lib/<wbr>Query<wbr>Engine<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/engines_query_sparql_link_traversal_solid_lib_index_browser.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/lib/index-<wbr>browser</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/engines_query_sparql_link_traversal_lib.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal/lib</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/engines_query_sparql_link_traversal_lib_QueryEngine.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal/lib/<wbr>Query<wbr>Engine</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/engines_query_sparql_link_traversal_lib_QueryEngineFactory.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal/lib/<wbr>Query<wbr>Engine<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/engines_query_sparql_link_traversal_lib_index_browser.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal/lib/index-<wbr>browser</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/mediator_combine_array.html">mediator-<wbr>combine-<wbr>array</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/types_link_traversal.html">types-<wbr>link-<wbr>traversal</a>
+					</li>
+					<li class="label tsd-is-external">
+						<span>Externals</span>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_actor_abstract_mediatyped_lib.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/actor-<wbr>abstract-<wbr>mediatyped/lib</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_actor_abstract_mediatyped_lib_ActorAbstractMediaTyped.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/actor-<wbr>abstract-<wbr>mediatyped/lib/<wbr>Actor<wbr>Abstract<wbr>Media<wbr>Typed</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_actor_abstract_mediatyped_lib_ActorAbstractMediaTypedFixed.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/actor-<wbr>abstract-<wbr>mediatyped/lib/<wbr>Actor<wbr>Abstract<wbr>Media<wbr>Typed<wbr>Fixed</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_actor_init_query_lib.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/actor-<wbr>init-<wbr>query/lib</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_actor_init_query_lib_ActorInitQuery.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/actor-<wbr>init-<wbr>query/lib/<wbr>Actor<wbr>Init<wbr>Query</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_actor_init_query_lib_ActorInitQueryBase.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/actor-<wbr>init-<wbr>query/lib/<wbr>Actor<wbr>Init<wbr>Query<wbr>Base</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_actor_init_query_lib_HttpServiceSparqlEndpoint.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/actor-<wbr>init-<wbr>query/lib/<wbr>Http<wbr>Service<wbr>Sparql<wbr>Endpoint</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_actor_init_query_lib_MemoryPhysicalQueryPlanLogger.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/actor-<wbr>init-<wbr>query/lib/<wbr>Memory<wbr>Physical<wbr>Query<wbr>Plan<wbr>Logger</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_actor_init_query_lib_QueryEngineBase.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/actor-<wbr>init-<wbr>query/lib/<wbr>Query<wbr>Engine<wbr>Base</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_actor_init_query_lib_QueryEngineFactoryBase.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/actor-<wbr>init-<wbr>query/lib/<wbr>Query<wbr>Engine<wbr>Factory<wbr>Base</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_actor_init_query_lib_cli_CliArgsHandlerBase.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/actor-<wbr>init-<wbr>query/lib/cli/<wbr>Cli<wbr>Args<wbr>Handler<wbr>Base</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_actor_init_query_lib_cli_CliArgsHandlerHttp.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/actor-<wbr>init-<wbr>query/lib/cli/<wbr>Cli<wbr>Args<wbr>Handler<wbr>Http</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_actor_init_query_lib_cli_CliArgsHandlerQuery.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/actor-<wbr>init-<wbr>query/lib/cli/<wbr>Cli<wbr>Args<wbr>Handler<wbr>Query</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_context_preprocess_lib.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>context-<wbr>preprocess/lib</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_context_preprocess_lib_ActorContextPreprocess.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>context-<wbr>preprocess/lib/<wbr>Actor<wbr>Context<wbr>Preprocess</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_http_invalidate_lib.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>http-<wbr>invalidate/lib</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_http_invalidate_lib_ActorHttpInvalidate.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>http-<wbr>invalidate/lib/<wbr>Actor<wbr>Http<wbr>Invalidate</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_http_invalidate_lib_ActorHttpInvalidateListenable.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>http-<wbr>invalidate/lib/<wbr>Actor<wbr>Http<wbr>Invalidate<wbr>Listenable</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_init_lib.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>init/lib</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_init_lib_ActorInit.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>init/lib/<wbr>Actor<wbr>Init</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_optimize_query_operation_lib.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>optimize-<wbr>query-<wbr>operation/lib</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_optimize_query_operation_lib_ActorOptimizeQueryOperation.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>optimize-<wbr>query-<wbr>operation/lib/<wbr>Actor<wbr>Optimize<wbr>Query<wbr>Operation</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_query_operation_lib.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>query-<wbr>operation/lib</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_query_operation_lib_ActorQueryOperation.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>query-<wbr>operation/lib/<wbr>Actor<wbr>Query<wbr>Operation</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_query_operation_lib_ActorQueryOperationTyped.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>query-<wbr>operation/lib/<wbr>Actor<wbr>Query<wbr>Operation<wbr>Typed</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_query_operation_lib_ActorQueryOperationTypedMediated.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>query-<wbr>operation/lib/<wbr>Actor<wbr>Query<wbr>Operation<wbr>Typed<wbr>Mediated</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_query_operation_lib_Bindings.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>query-<wbr>operation/lib/<wbr>Bindings</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_query_operation_lib_BusQueryOperation.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>query-<wbr>operation/lib/<wbr>Bus<wbr>Query<wbr>Operation</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_query_parse_lib.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>query-<wbr>parse/lib</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_query_parse_lib_ActorQueryParse.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>query-<wbr>parse/lib/<wbr>Actor<wbr>Query<wbr>Parse</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_query_result_serialize_lib.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>query-<wbr>result-<wbr>serialize/lib</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_query_result_serialize_lib_ActorQueryResultSerialize.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>query-<wbr>result-<wbr>serialize/lib/<wbr>Actor<wbr>Query<wbr>Result<wbr>Serialize</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_query_result_serialize_lib_ActorQueryResultSerializeFixedMediaTypes.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>query-<wbr>result-<wbr>serialize/lib/<wbr>Actor<wbr>Query<wbr>Result<wbr>Serialize<wbr>Fixed<wbr>Media<wbr>Types</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_context_entries_lib.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/context-<wbr>entries/lib</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_context_entries_lib_Keys.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/context-<wbr>entries/lib/<wbr>Keys</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_core_lib.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/core/lib</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_core_lib_ActionContext.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/core/lib/<wbr>Action<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_core_lib_ActionObserver.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/core/lib/<wbr>Action<wbr>Observer</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_core_lib_Actor.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/core/lib/<wbr>Actor</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_core_lib_Bus.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/core/lib/<wbr>Bus</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_core_lib_BusIndexed.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/core/lib/<wbr>Bus<wbr>Indexed</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_core_lib_ContextEntries.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/core/lib/<wbr>Context<wbr>Entries</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_core_lib_Mediator.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/core/lib/<wbr>Mediator</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_runner_cli_lib.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/runner-<wbr>cli/lib</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_runner_cli_lib_ArgsRunner.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/runner-<wbr>cli/lib/<wbr>Args<wbr>Runner</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_runner_lib.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/runner/lib</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_runner_lib_Runner.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/runner/lib/<wbr>Runner</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_runner_lib_Setup.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/runner/lib/<wbr>Setup</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_types_lib.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/types/lib</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_types_lib_Bindings.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/types/lib/<wbr>Bindings</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_types_lib_IActionContext.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/types/lib/IAction<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_types_lib_ICliArgsHandler.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/types/lib/ICli<wbr>Args<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_types_lib_IDataDestination.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/types/lib/IData<wbr>Destination</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_types_lib_IDataSource.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/types/lib/IData<wbr>Source</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_types_lib_IJoinEntry.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/types/lib/IJoin<wbr>Entry</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_types_lib_IMetadata.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/types/lib/IMetadata</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_types_lib_IPhysicalQueryPlanLogger.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/types/lib/IPhysical<wbr>Query<wbr>Plan<wbr>Logger</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_types_lib_IProxyHandler.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/types/lib/IProxy<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_types_lib_IQueryContext.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/types/lib/IQuery<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_types_lib_IQueryEngine.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/types/lib/IQuery<wbr>Engine</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_types_lib_IQueryOperationResult.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/types/lib/IQuery<wbr>Operation<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_types_lib_Logger.html">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/types/lib/<wbr>Logger</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/packages_actor_rdf_resolve_hypermedia_links_traverse_annotate_source_graph_node_modules__comunica_core_lib.html">packages/actor-<wbr>rdf-<wbr>resolve-<wbr>hypermedia-<wbr>links-<wbr>traverse-<wbr>annotate-<wbr>source-<wbr>graph/node_<wbr>modules/@comunica/core/lib</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/packages_actor_rdf_resolve_hypermedia_links_traverse_annotate_source_graph_node_modules__comunica_types_lib.html">packages/actor-<wbr>rdf-<wbr>resolve-<wbr>hypermedia-<wbr>links-<wbr>traverse-<wbr>annotate-<wbr>source-<wbr>graph/node_<wbr>modules/@comunica/types/lib</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/packages_actor_rdf_resolve_hypermedia_links_traverse_node_modules__comunica_context_entries_lib.html">packages/actor-<wbr>rdf-<wbr>resolve-<wbr>hypermedia-<wbr>links-<wbr>traverse/node_<wbr>modules/@comunica/context-<wbr>entries/lib</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-module">
+						<a href="modules/actor_extract_links_all.html" class="tsd-kind-icon">actor-<wbr>extract-<wbr>links-<wbr>all</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/actor_extract_links_content_policies.html" class="tsd-kind-icon">actor-<wbr>extract-<wbr>links-<wbr>content-<wbr>policies</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/actor_extract_links_predicates.html" class="tsd-kind-icon">actor-<wbr>extract-<wbr>links-<wbr>predicates</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/actor_extract_links_quad_pattern.html" class="tsd-kind-icon">actor-<wbr>extract-<wbr>links-<wbr>quad-<wbr>pattern</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/actor_extract_links_quad_pattern_query.html" class="tsd-kind-icon">actor-<wbr>extract-<wbr>links-<wbr>quad-<wbr>pattern-<wbr>query</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/actor_extract_links_solid_type_index.html" class="tsd-kind-icon">actor-<wbr>extract-<wbr>links-<wbr>solid-<wbr>type-<wbr>index</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/actor_optimize_query_operation_set_seed_sources_quadpattern_iris.html" class="tsd-kind-icon">actor-<wbr>optimize-<wbr>query-<wbr>operation-<wbr>set-<wbr>seed-<wbr>sources-<wbr>quadpattern-<wbr>iris</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/actor_rdf_join_entries_sort_traversal_zero_knowledge.html" class="tsd-kind-icon">actor-<wbr>rdf-<wbr>join-<wbr>entries-<wbr>sort-<wbr>traversal-<wbr>zero-<wbr>knowledge</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/actor_rdf_metadata_extract_shapetrees.html" class="tsd-kind-icon">actor-<wbr>rdf-<wbr>metadata-<wbr>extract-<wbr>shapetrees</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/actor_rdf_metadata_extract_traverse.html" class="tsd-kind-icon">actor-<wbr>rdf-<wbr>metadata-<wbr>extract-<wbr>traverse</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/actor_rdf_resolve_hypermedia_links_queue_wrapper_limit_count.html" class="tsd-kind-icon">actor-<wbr>rdf-<wbr>resolve-<wbr>hypermedia-<wbr>links-<wbr>queue-<wbr>wrapper-<wbr>limit-<wbr>count</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/actor_rdf_resolve_hypermedia_links_queue_wrapper_limit_depth.html" class="tsd-kind-icon">actor-<wbr>rdf-<wbr>resolve-<wbr>hypermedia-<wbr>links-<wbr>queue-<wbr>wrapper-<wbr>limit-<wbr>depth</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/actor_rdf_resolve_hypermedia_links_traverse.html" class="tsd-kind-icon">actor-<wbr>rdf-<wbr>resolve-<wbr>hypermedia-<wbr>links-<wbr>traverse</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/actor_rdf_resolve_hypermedia_links_traverse_annotate_source_graph.html" class="tsd-kind-icon">actor-<wbr>rdf-<wbr>resolve-<wbr>hypermedia-<wbr>links-<wbr>traverse-<wbr>annotate-<wbr>source-<wbr>graph</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/actor_rdf_resolve_hypermedia_links_traverse_prune_shapetrees.html" class="tsd-kind-icon">actor-<wbr>rdf-<wbr>resolve-<wbr>hypermedia-<wbr>links-<wbr>traverse-<wbr>prune-<wbr>shapetrees</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/actor_rdf_resolve_hypermedia_links_traverse_replace_conditional.html" class="tsd-kind-icon">actor-<wbr>rdf-<wbr>resolve-<wbr>hypermedia-<wbr>links-<wbr>traverse-<wbr>replace-<wbr>conditional</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/bus_extract_links.html" class="tsd-kind-icon">bus-<wbr>extract-<wbr>links</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/context_entries_link_traversal.html" class="tsd-kind-icon">context-<wbr>entries-<wbr>link-<wbr>traversal</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/engines_query_sparql_link_traversal_solid_lib.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/lib</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/engines_query_sparql_link_traversal_solid_lib_CliArgsHandlerAnnotateSources.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/lib/<wbr>Cli<wbr>Args<wbr>Handler<wbr>Annotate<wbr>Sources</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/engines_query_sparql_link_traversal_solid_lib_QueryEngine.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/lib/<wbr>Query<wbr>Engine</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/engines_query_sparql_link_traversal_solid_lib_QueryEngineFactory.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/lib/<wbr>Query<wbr>Engine<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/engines_query_sparql_link_traversal_solid_lib_index_browser.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/lib/index-<wbr>browser</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_actor_abstract_mediatyped_lib.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/actor-<wbr>abstract-<wbr>mediatyped/lib</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_actor_abstract_mediatyped_lib_ActorAbstractMediaTyped.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/actor-<wbr>abstract-<wbr>mediatyped/lib/<wbr>Actor<wbr>Abstract<wbr>Media<wbr>Typed</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_actor_abstract_mediatyped_lib_ActorAbstractMediaTypedFixed.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/actor-<wbr>abstract-<wbr>mediatyped/lib/<wbr>Actor<wbr>Abstract<wbr>Media<wbr>Typed<wbr>Fixed</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_actor_init_query_lib.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/actor-<wbr>init-<wbr>query/lib</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_actor_init_query_lib_ActorInitQuery.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/actor-<wbr>init-<wbr>query/lib/<wbr>Actor<wbr>Init<wbr>Query</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_actor_init_query_lib_ActorInitQueryBase.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/actor-<wbr>init-<wbr>query/lib/<wbr>Actor<wbr>Init<wbr>Query<wbr>Base</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_actor_init_query_lib_HttpServiceSparqlEndpoint.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/actor-<wbr>init-<wbr>query/lib/<wbr>Http<wbr>Service<wbr>Sparql<wbr>Endpoint</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_actor_init_query_lib_MemoryPhysicalQueryPlanLogger.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/actor-<wbr>init-<wbr>query/lib/<wbr>Memory<wbr>Physical<wbr>Query<wbr>Plan<wbr>Logger</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_actor_init_query_lib_QueryEngineBase.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/actor-<wbr>init-<wbr>query/lib/<wbr>Query<wbr>Engine<wbr>Base</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_actor_init_query_lib_QueryEngineFactoryBase.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/actor-<wbr>init-<wbr>query/lib/<wbr>Query<wbr>Engine<wbr>Factory<wbr>Base</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_actor_init_query_lib_cli_CliArgsHandlerBase.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/actor-<wbr>init-<wbr>query/lib/cli/<wbr>Cli<wbr>Args<wbr>Handler<wbr>Base</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_actor_init_query_lib_cli_CliArgsHandlerHttp.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/actor-<wbr>init-<wbr>query/lib/cli/<wbr>Cli<wbr>Args<wbr>Handler<wbr>Http</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_actor_init_query_lib_cli_CliArgsHandlerQuery.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/actor-<wbr>init-<wbr>query/lib/cli/<wbr>Cli<wbr>Args<wbr>Handler<wbr>Query</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_context_preprocess_lib.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>context-<wbr>preprocess/lib</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_context_preprocess_lib_ActorContextPreprocess.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>context-<wbr>preprocess/lib/<wbr>Actor<wbr>Context<wbr>Preprocess</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_http_invalidate_lib.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>http-<wbr>invalidate/lib</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_http_invalidate_lib_ActorHttpInvalidate.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>http-<wbr>invalidate/lib/<wbr>Actor<wbr>Http<wbr>Invalidate</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_http_invalidate_lib_ActorHttpInvalidateListenable.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>http-<wbr>invalidate/lib/<wbr>Actor<wbr>Http<wbr>Invalidate<wbr>Listenable</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_init_lib.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>init/lib</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_init_lib_ActorInit.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>init/lib/<wbr>Actor<wbr>Init</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_optimize_query_operation_lib.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>optimize-<wbr>query-<wbr>operation/lib</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_optimize_query_operation_lib_ActorOptimizeQueryOperation.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>optimize-<wbr>query-<wbr>operation/lib/<wbr>Actor<wbr>Optimize<wbr>Query<wbr>Operation</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_query_operation_lib.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>query-<wbr>operation/lib</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_query_operation_lib_ActorQueryOperation.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>query-<wbr>operation/lib/<wbr>Actor<wbr>Query<wbr>Operation</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_query_operation_lib_ActorQueryOperationTyped.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>query-<wbr>operation/lib/<wbr>Actor<wbr>Query<wbr>Operation<wbr>Typed</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_query_operation_lib_ActorQueryOperationTypedMediated.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>query-<wbr>operation/lib/<wbr>Actor<wbr>Query<wbr>Operation<wbr>Typed<wbr>Mediated</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_query_operation_lib_Bindings.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>query-<wbr>operation/lib/<wbr>Bindings</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_query_operation_lib_BusQueryOperation.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>query-<wbr>operation/lib/<wbr>Bus<wbr>Query<wbr>Operation</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_query_parse_lib.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>query-<wbr>parse/lib</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_query_parse_lib_ActorQueryParse.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>query-<wbr>parse/lib/<wbr>Actor<wbr>Query<wbr>Parse</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_query_result_serialize_lib.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>query-<wbr>result-<wbr>serialize/lib</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_query_result_serialize_lib_ActorQueryResultSerialize.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>query-<wbr>result-<wbr>serialize/lib/<wbr>Actor<wbr>Query<wbr>Result<wbr>Serialize</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_bus_query_result_serialize_lib_ActorQueryResultSerializeFixedMediaTypes.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/bus-<wbr>query-<wbr>result-<wbr>serialize/lib/<wbr>Actor<wbr>Query<wbr>Result<wbr>Serialize<wbr>Fixed<wbr>Media<wbr>Types</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_context_entries_lib.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/context-<wbr>entries/lib</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_context_entries_lib_Keys.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/context-<wbr>entries/lib/<wbr>Keys</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_core_lib.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/core/lib</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_core_lib_ActionContext.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/core/lib/<wbr>Action<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_core_lib_ActionObserver.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/core/lib/<wbr>Action<wbr>Observer</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_core_lib_Actor.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/core/lib/<wbr>Actor</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_core_lib_Bus.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/core/lib/<wbr>Bus</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_core_lib_BusIndexed.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/core/lib/<wbr>Bus<wbr>Indexed</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_core_lib_ContextEntries.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/core/lib/<wbr>Context<wbr>Entries</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_core_lib_Mediator.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/core/lib/<wbr>Mediator</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_runner_cli_lib.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/runner-<wbr>cli/lib</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_runner_cli_lib_ArgsRunner.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/runner-<wbr>cli/lib/<wbr>Args<wbr>Runner</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_runner_lib.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/runner/lib</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_runner_lib_Runner.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/runner/lib/<wbr>Runner</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_runner_lib_Setup.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/runner/lib/<wbr>Setup</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_types_lib.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/types/lib</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_types_lib_Bindings.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/types/lib/<wbr>Bindings</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_types_lib_IActionContext.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/types/lib/IAction<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_types_lib_ICliArgsHandler.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/types/lib/ICli<wbr>Args<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_types_lib_IDataDestination.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/types/lib/IData<wbr>Destination</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_types_lib_IDataSource.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/types/lib/IData<wbr>Source</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_types_lib_IJoinEntry.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/types/lib/IJoin<wbr>Entry</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_types_lib_IMetadata.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/types/lib/IMetadata</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_types_lib_IPhysicalQueryPlanLogger.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/types/lib/IPhysical<wbr>Query<wbr>Plan<wbr>Logger</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_types_lib_IProxyHandler.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/types/lib/IProxy<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_types_lib_IQueryContext.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/types/lib/IQuery<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_types_lib_IQueryEngine.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/types/lib/IQuery<wbr>Engine</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_types_lib_IQueryOperationResult.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/types/lib/IQuery<wbr>Operation<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/engines_query_sparql_link_traversal_solid_node_modules__comunica_types_lib_Logger.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal-<wbr>solid/node_<wbr>modules/@comunica/types/lib/<wbr>Logger</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/engines_query_sparql_link_traversal_lib.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal/lib</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/engines_query_sparql_link_traversal_lib_QueryEngine.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal/lib/<wbr>Query<wbr>Engine</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/engines_query_sparql_link_traversal_lib_QueryEngineFactory.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal/lib/<wbr>Query<wbr>Engine<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/engines_query_sparql_link_traversal_lib_index_browser.html" class="tsd-kind-icon">engines/query-<wbr>sparql-<wbr>link-<wbr>traversal/lib/index-<wbr>browser</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/mediator_combine_array.html" class="tsd-kind-icon">mediator-<wbr>combine-<wbr>array</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/packages_actor_rdf_resolve_hypermedia_links_traverse_annotate_source_graph_node_modules__comunica_core_lib.html" class="tsd-kind-icon">packages/actor-<wbr>rdf-<wbr>resolve-<wbr>hypermedia-<wbr>links-<wbr>traverse-<wbr>annotate-<wbr>source-<wbr>graph/node_<wbr>modules/@comunica/core/lib</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/packages_actor_rdf_resolve_hypermedia_links_traverse_annotate_source_graph_node_modules__comunica_types_lib.html" class="tsd-kind-icon">packages/actor-<wbr>rdf-<wbr>resolve-<wbr>hypermedia-<wbr>links-<wbr>traverse-<wbr>annotate-<wbr>source-<wbr>graph/node_<wbr>modules/@comunica/types/lib</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="modules/packages_actor_rdf_resolve_hypermedia_links_traverse_node_modules__comunica_context_entries_lib.html" class="tsd-kind-icon">packages/actor-<wbr>rdf-<wbr>resolve-<wbr>hypermedia-<wbr>links-<wbr>traverse/node_<wbr>modules/@comunica/context-<wbr>entries/lib</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/types_link_traversal.html" class="tsd-kind-icon">types-<wbr>link-<wbr>traversal</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
