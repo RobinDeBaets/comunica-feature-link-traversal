@@ -1,0 +1,434 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>BloomFilter | Comunica Link Traversal</title>
+	<meta name="description" content="Documentation for Comunica Link Traversal">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">Comunica Link Traversal</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">Comunica Link Traversal</a>
+				</li>
+				<li>
+					<a href="../modules/actor_extract_links_summaries.html">actor-extract-links-summaries</a>
+				</li>
+				<li>
+					<a href="actor_extract_links_summaries.BloomFilter.html">BloomFilter</a>
+				</li>
+			</ul>
+			<h1>Class BloomFilter</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">BloomFilter</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="actor_extract_links_summaries.BloomFilter.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="actor_extract_links_summaries.BloomFilter.html#bitSet" class="tsd-kind-icon">bit<wbr>Set</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="actor_extract_links_summaries.BloomFilter.html#dimensions" class="tsd-kind-icon">dimensions</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="actor_extract_links_summaries.BloomFilter.html#filterSize" class="tsd-kind-icon">filter<wbr>Size</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="actor_extract_links_summaries.BloomFilter.html#hashFunctions" class="tsd-kind-icon">hash<wbr>Functions</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="actor_extract_links_summaries.BloomFilter.html#clipCoordinate" class="tsd-kind-icon">clip<wbr>Coordinate</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="actor_extract_links_summaries.BloomFilter.html#containsEntry" class="tsd-kind-icon">contains<wbr>Entry</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="actor_extract_links_summaries.BloomFilter.html#getCoordinatesIterable" class="tsd-kind-icon">get<wbr>Coordinates<wbr>Iterable</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="actor_extract_links_summaries.BloomFilter.html#getIndex" class="tsd-kind-icon">get<wbr>Index</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Bloom<wbr>Filter<span class="tsd-signature-symbol">(</span>dimensions<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, filterSize<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, hashFunctions<span class="tsd-signature-symbol">: </span><a href="../modules/actor_extract_links_summaries.html#HashFunction" class="tsd-signature-type" data-tsd-kind="Type alias">HashFunction</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="actor_extract_links_summaries.BloomFilter.html" class="tsd-signature-type" data-tsd-kind="Class">BloomFilter</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/RobinDeBaets/comunica-feature-link-traversal/blob/d637b72/packages/actor-extract-links-summaries/lib/summary/bloomfilter/BloomFilter.ts#L13">packages/actor-extract-links-summaries/lib/summary/bloomfilter/BloomFilter.ts:13</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>dimensions: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>filterSize: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>hashFunctions: <a href="../modules/actor_extract_links_summaries.html#HashFunction" class="tsd-signature-type" data-tsd-kind="Type alias">HashFunction</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="actor_extract_links_summaries.BloomFilter.html" class="tsd-signature-type" data-tsd-kind="Class">BloomFilter</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="bitSet" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> bit<wbr>Set</h3>
+					<div class="tsd-signature tsd-kind-icon">bit<wbr>Set<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">BitSet</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/RobinDeBaets/comunica-feature-link-traversal/blob/d637b72/packages/actor-extract-links-summaries/lib/summary/bloomfilter/BloomFilter.ts#L11">packages/actor-extract-links-summaries/lib/summary/bloomfilter/BloomFilter.ts:11</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Implementation of multidimensional bloom filter made for patterns
+							A pattern is a collection of terms and variables</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="dimensions" class="tsd-anchor"></a>
+					<h3>dimensions</h3>
+					<div class="tsd-signature tsd-kind-icon">dimensions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="filterSize" class="tsd-anchor"></a>
+					<h3>filter<wbr>Size</h3>
+					<div class="tsd-signature tsd-kind-icon">filter<wbr>Size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="hashFunctions" class="tsd-anchor"></a>
+					<h3>hash<wbr>Functions</h3>
+					<div class="tsd-signature tsd-kind-icon">hash<wbr>Functions<span class="tsd-signature-symbol">:</span> <a href="../modules/actor_extract_links_summaries.html#HashFunction" class="tsd-signature-type" data-tsd-kind="Type alias">HashFunction</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="clipCoordinate" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> clip<wbr>Coordinate</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">clip<wbr>Coordinate<span class="tsd-signature-symbol">(</span>coordinate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">bigint</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/RobinDeBaets/comunica-feature-link-traversal/blob/d637b72/packages/actor-extract-links-summaries/lib/summary/bloomfilter/BloomFilter.ts#L16">packages/actor-extract-links-summaries/lib/summary/bloomfilter/BloomFilter.ts:16</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>coordinate: <span class="tsd-signature-type">bigint</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="containsEntry" class="tsd-anchor"></a>
+					<h3>contains<wbr>Entry</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">contains<wbr>Entry<span class="tsd-signature-symbol">(</span>entry<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/RobinDeBaets/comunica-feature-link-traversal/blob/d637b72/packages/actor-extract-links-summaries/lib/summary/bloomfilter/BloomFilter.ts#L41">packages/actor-extract-links-summaries/lib/summary/bloomfilter/BloomFilter.ts:41</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>entry: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="getCoordinatesIterable" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> get<wbr>Coordinates<wbr>Iterable</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Coordinates<wbr>Iterable<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, hashFunction<span class="tsd-signature-symbol">: </span><a href="../modules/actor_extract_links_summaries.html#HashFunction" class="tsd-signature-type" data-tsd-kind="Type alias">HashFunction</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/RobinDeBaets/comunica-feature-link-traversal/blob/d637b72/packages/actor-extract-links-summaries/lib/summary/bloomfilter/BloomFilter.ts#L21">packages/actor-extract-links-summaries/lib/summary/bloomfilter/BloomFilter.ts:21</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>hashFunction: <a href="../modules/actor_extract_links_summaries.html#HashFunction" class="tsd-signature-type" data-tsd-kind="Type alias">HashFunction</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="getIndex" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> get<wbr>Index</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Index<span class="tsd-signature-symbol">(</span>coordinates<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/RobinDeBaets/comunica-feature-link-traversal/blob/d637b72/packages/actor-extract-links-summaries/lib/summary/bloomfilter/BloomFilter.ts#L55">packages/actor-extract-links-summaries/lib/summary/bloomfilter/BloomFilter.ts:55</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>coordinates: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Modules</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/actor_extract_links_summaries.html">actor-<wbr>extract-<wbr>links-<wbr>summaries</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-module">
+						<a href="../modules/actor_extract_links_summaries.html" class="tsd-kind-icon">actor-<wbr>extract-<wbr>links-<wbr>summaries</a>
+						<ul>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="actor_extract_links_summaries.ActorExtractLinksSummaries.html" class="tsd-kind-icon">Actor<wbr>Extract<wbr>Links<wbr>Summaries</a>
+							</li>
+							<li class="current tsd-kind-class tsd-parent-kind-module">
+								<a href="actor_extract_links_summaries.BloomFilter.html" class="tsd-kind-icon">Bloom<wbr>Filter</a>
+								<ul>
+									<li class=" tsd-kind-constructor tsd-parent-kind-class">
+										<a href="actor_extract_links_summaries.BloomFilter.html#constructor" class="tsd-kind-icon">constructor</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+										<a href="actor_extract_links_summaries.BloomFilter.html#bitSet" class="tsd-kind-icon">bit<wbr>Set</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class">
+										<a href="actor_extract_links_summaries.BloomFilter.html#dimensions" class="tsd-kind-icon">dimensions</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class">
+										<a href="actor_extract_links_summaries.BloomFilter.html#filterSize" class="tsd-kind-icon">filter<wbr>Size</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class">
+										<a href="actor_extract_links_summaries.BloomFilter.html#hashFunctions" class="tsd-kind-icon">hash<wbr>Functions</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+										<a href="actor_extract_links_summaries.BloomFilter.html#clipCoordinate" class="tsd-kind-icon">clip<wbr>Coordinate</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class">
+										<a href="actor_extract_links_summaries.BloomFilter.html#containsEntry" class="tsd-kind-icon">contains<wbr>Entry</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+										<a href="actor_extract_links_summaries.BloomFilter.html#getCoordinatesIterable" class="tsd-kind-icon">get<wbr>Coordinates<wbr>Iterable</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+										<a href="actor_extract_links_summaries.BloomFilter.html#getIndex" class="tsd-kind-icon">get<wbr>Index</a>
+									</li>
+								</ul>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="actor_extract_links_summaries.BloomFilterSummary.html" class="tsd-kind-icon">Bloom<wbr>Filter<wbr>Summary</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="actor_extract_links_summaries.DiscoverySummary.html" class="tsd-kind-icon">Discovery<wbr>Summary</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="actor_extract_links_summaries.SelectionSummary.html" class="tsd-kind-icon">Selection<wbr>Summary</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="actor_extract_links_summaries.Summary.html" class="tsd-kind-icon">Summary</a>
+							</li>
+							<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+								<a href="../modules/actor_extract_links_summaries.html#HashFunction" class="tsd-kind-icon">Hash<wbr>Function</a>
+							</li>
+							<li class=" tsd-kind-variable tsd-parent-kind-module">
+								<a href="../modules/actor_extract_links_summaries.html#PREFIX" class="tsd-kind-icon">PREFIX</a>
+							</li>
+							<li class=" tsd-kind-variable tsd-parent-kind-module">
+								<a href="../modules/actor_extract_links_summaries.html#SUMMARY_BLOOM_FILTER" class="tsd-kind-icon">SUMMARY_<wbr>BLOOM_<wbr>FILTER</a>
+							</li>
+							<li class=" tsd-kind-variable tsd-parent-kind-module">
+								<a href="../modules/actor_extract_links_summaries.html#SUMMARY_BLOOM_FILTER_HASH_FUNCTIONS" class="tsd-kind-icon">SUMMARY_<wbr>BLOOM_<wbr>FILTER_<wbr>HASH_<wbr>FUNCTIONS</a>
+							</li>
+							<li class=" tsd-kind-variable tsd-parent-kind-module">
+								<a href="../modules/actor_extract_links_summaries.html#SUMMARY_BLOOM_FILTER_SIZE" class="tsd-kind-icon">SUMMARY_<wbr>BLOOM_<wbr>FILTER_<wbr>SIZE</a>
+							</li>
+							<li class=" tsd-kind-variable tsd-parent-kind-module">
+								<a href="../modules/actor_extract_links_summaries.html#SUMMARY_CLASS" class="tsd-kind-icon">SUMMARY_<wbr>CLASS</a>
+							</li>
+							<li class=" tsd-kind-variable tsd-parent-kind-module">
+								<a href="../modules/actor_extract_links_summaries.html#SUMMARY_FILE" class="tsd-kind-icon">SUMMARY_<wbr>FILE</a>
+							</li>
+							<li class=" tsd-kind-variable tsd-parent-kind-module">
+								<a href="../modules/actor_extract_links_summaries.html#SUMMARY_OF" class="tsd-kind-icon">SUMMARY_<wbr>OF</a>
+							</li>
+							<li class=" tsd-kind-variable tsd-parent-kind-module">
+								<a href="../modules/actor_extract_links_summaries.html#SUMMARY_TYPE" class="tsd-kind-icon">SUMMARY_<wbr>TYPE</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="../modules/actor_extract_links_summaries.html#createFromType" class="tsd-kind-icon">create<wbr>From<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="../modules/actor_extract_links_summaries.html#extractElements" class="tsd-kind-icon">extract<wbr>Elements</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="../modules/actor_extract_links_summaries.html#getSha256Function" class="tsd-kind-icon">get<wbr>Sha256<wbr>Function</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="../modules/actor_extract_links_summaries.html#patternToStrings" class="tsd-kind-icon">pattern<wbr>ToStrings</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+								<a href="../modules/actor_extract_links_summaries.html#product" class="tsd-kind-icon">product</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="../modules/actor_extract_links_summaries.html#termToString" class="tsd-kind-icon">term<wbr>ToString</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
