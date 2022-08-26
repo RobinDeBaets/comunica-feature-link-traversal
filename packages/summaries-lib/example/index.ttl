@@ -1,0 +1,15 @@
+@prefix summary: <http://localhost:8000/summary#> .
+
+<http://localhost:3000/dbpedia.org/resource/Greece#summary>
+  a summary:Summary ;
+  summary:summaryType summary:BloomFilter ;
+  summary:summaryFile <http://localhost:8000/summary1> ;
+  summary:summaryOf <http://localhost:3000/dbpedia.org/resource/Greece> ;
+  summary:bloomFilterSize 128 ;
+  summary:bloomFilterHashFunctions 4 .
+
+<http://localhost:3000/dbpedia.org/resource/#summary>
+  a summary:Summary ;
+  summary:summaryType summary:MultiDimensionalTable ;
+  summary:summaryFile <http://localhost:8000/summary2> ;
+  summary:multiDimensionalTableSize 2048 .

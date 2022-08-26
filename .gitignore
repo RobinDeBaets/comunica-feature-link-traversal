@@ -23,4 +23,4 @@ web-clients/builds
 componentsjs-error-state.json
 engines/*/components
 packages/*/components
-
+.DS_Store

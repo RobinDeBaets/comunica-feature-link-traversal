@@ -1,0 +1,18 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX snvoc: <http://localhost:3000/www.ldbc.eu/ldbc_socialnet/1.0/vocabulary/>
+
+SELECT ?firstName ?lastName ?birthday ?locationIP ?browserUsed ?cityId ?gender ?creationDate WHERE {
+  ?person rdf:type snvoc:Person;
+    snvoc:id ?personId;
+    snvoc:firstName ?firstName;
+    snvoc:lastName ?lastName;
+    snvoc:lastName "Perera";
+    snvoc:gender ?gender;
+    snvoc:birthday ?birthday;
+    snvoc:creationDate ?creationDate;
+    snvoc:browserUsed ?browserUsed;
+    snvoc:locationIP ?locationIP;
+    snvoc:isLocatedIn ?city.
+  ?city snvoc:id ?cityId.
+
+}

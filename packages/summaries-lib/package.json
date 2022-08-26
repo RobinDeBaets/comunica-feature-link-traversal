@@ -1,0 +1,47 @@
+{
+  "name": "@comunica/summaries-lib",
+  "version": "0.0.1",
+  "description": "A library with utilities for creating and handling summaries.",
+  "main": "lib/index.js",
+  "typings": "lib/index",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/comunica/comunica.git",
+    "directory": "packages/summaries-lib"
+  },
+  "bin": {
+    "bloom-filter-creator": "lib/summary/bloomfilter/BloomFilterCreator.js",
+    "multi-dimensional-table-creator": "lib/summary/multidimensionaltable/MultiDimensionalTableCreator.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "keywords": [
+    "comunica",
+    "context",
+    "entries",
+    "keys"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/comunica/comunica/issues"
+  },
+  "homepage": "https://comunica.dev/",
+  "files": [
+    "lib/**/*.d.ts",
+    "lib/**/*.js"
+  ],
+  "dependencies": {
+    "bitset": "^5.1.1",
+    "hash.js": "^1.1.7",
+    "jsonld-streaming-parser": "^3.0.0",
+    "n3": "^1.16.2",
+    "rdf-terms": "^1.6.2",
+    "yargs": "^17.5.1"
+  },
+  "scripts": {
+    "build": "npm run build:ts",
+    "build:ts": "node \"../../node_modules/typescript/bin/tsc\""
+  }
+}

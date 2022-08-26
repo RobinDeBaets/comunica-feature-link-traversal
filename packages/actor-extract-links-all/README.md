@@ -1,6 +1,6 @@
 # Comunica All Extract Links Actor
 
-[![npm version](https://badge.fury.io/js/%40comunica%2Factor-extract-links-all.svg)](https://www.npmjs.com/package/@comunica/actor-extract-links-all)
+[![npm version](https://badge.fury.io/js/%40comunica%2Factor-extract-links-summaries.svg)](https://www.npmjs.com/package/@comunica/actor-extract-links-summaries)
 
 An [RDF Metadata Extract](https://github.com/comunica/comunica/tree/master/packages/bus-extract-links) actor that
 collects all URIs in a page.

@@ -1,0 +1,81 @@
+@base <http://localhost:8000/summary#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<#Summary>
+    rdfs:label "A Summary" ;
+    a rdfs:Class .
+
+<#SummaryType>
+    rdfs:label "A type of Summary" ;
+    a rdfs:Class .
+
+<#BloomFilter>
+    a rdfs:Class ;
+    rdfs:label "A Bloom Filter" ;
+    rdfs:subClassOf <#SummaryType> .
+
+<#MultiDimensionalTable>
+    a rdfs:Class ;
+    rdfs:label "A Multidimensional Table" ;
+    rdfs:subClassOf <#SummaryType> .
+
+<#summaryType>
+    a rdf:Property ;
+    rdfs:label "The type of Summary this is" ;
+    rdfs:domain <#Summary> ;
+    rdfs:range <#SummaryType> .
+
+<#SummaryMode>
+    rdfs:label "Summary mode indicating how this Summary is to be used" ;
+    a rdfs:Class .
+
+<#PruningMode>
+    a rdfs:Class ;
+    rdfs:label "Summary should be used for pruning" ;
+    rdfs:subClassOf <#SummaryMode> .
+
+<#DiscoveryMode>
+    a rdfs:Class ;
+    rdfs:label "Summary should be used for exploration" ;
+    rdfs:subClassOf <#SummaryMode> .
+
+<#summaryMode>
+    a rdf:Property ;
+    rdfs:label "Summary mode associated with this Summary" ;
+    rdfs:domain <#Summary> ;
+    rdfs:range <#DiscoveryMode> .
+
+<#BloomFilter>
+    a rdfs:Class ;
+    rdfs:label "A Bloom Filter" ;
+    rdfs:subClassOf <#SummaryType> .
+
+<#summaryFile>
+    a rdf:Property ;
+    rdfs:label "The raw summary file beloning to this property" ;
+    rdfs:domain <#Summary> .
+
+<#summaryOf>
+    a rdf:Property ;
+    rdfs:label "The datasource to which this summary belongs" ;
+    rdfs:domain <#Summary> .
+
+<#bloomFilterSize>
+    a rdf:Property ;
+    rdfs:label "The width of the Bloom Filter bitmap" ;
+    rdfs:domain <#Summary> ;
+    rdfs:range xsd:integer .
+
+<#bloomFilterHashFunctions>
+    a rdf:Property ;
+    rdfs:label "The number of hash functions to be used for this Bloom Filter" ;
+    rdfs:domain <#Summary> ;
+    rdfs:range xsd:integer .
+
+<#multiDimensionalTableSize>
+    a rdf:Property ;
+    rdfs:label "The width of the Multidimensional Histogram table" ;
+    rdfs:domain <#Summary> ;
+    rdfs:range xsd:integer .

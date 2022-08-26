@@ -1,0 +1,41 @@
+{
+  "name": "@comunica/summaries-benchmarks",
+  "version": "0.0.1",
+  "description": "A collection of benchmarks for query-sparql-link-traversal-summaries.",
+  "main": "lib/index.js",
+  "typings": "lib/index",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/comunica/comunica.git",
+    "directory": "packages/summaries-benchmarks"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "keywords": [
+    "comunica",
+    "context",
+    "entries",
+    "keys"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/comunica/comunica/issues"
+  },
+  "homepage": "https://comunica.dev/",
+  "files": [
+    "lib/**/*.d.ts",
+    "lib/**/*.js"
+  ],
+  "dependencies": {
+    "@comunica/actor-rdf-resolve-hypermedia-links-queue-wrapper-summaries": "^0.0.1",
+    "@comunica/logger-pretty": "^2.3.0",
+    "@comunica/query-sparql-link-traversal": "^0.0.1",
+    "@comunica/query-sparql-link-traversal-summaries": "^0.0.1"
+  },
+  "scripts": {
+    "build": "npm run build:ts",
+    "build:ts": "node \"../../node_modules/typescript/bin/tsc\""
+  }
+}
